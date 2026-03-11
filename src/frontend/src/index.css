@@ -1,0 +1,257 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/assets/fonts/MonaSans.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode */
+    --background: 0.97 0.005 260;
+    --foreground: 0.15 0.02 260;
+
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.02 260;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.02 260;
+
+    --primary: 0.58 0.22 162;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.94 0.01 260;
+    --secondary-foreground: 0.25 0.03 260;
+
+    --muted: 0.93 0.01 260;
+    --muted-foreground: 0.5 0.04 260;
+
+    --accent: 0.78 0.18 162;
+    --accent-foreground: 0.1 0.02 260;
+
+    --destructive: 0.55 0.22 15;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.88 0.02 260;
+    --input: 0.88 0.02 260;
+    --ring: 0.58 0.22 162;
+
+    --radius: 0.5rem;
+
+    --chart-1: 0.58 0.22 162;
+    --chart-2: 0.75 0.18 75;
+    --chart-3: 0.62 0.22 295;
+    --chart-4: 0.65 0.2 30;
+    --chart-5: 0.7 0.18 220;
+
+    --sidebar: 0.97 0.005 260;
+    --sidebar-foreground: 0.15 0.02 260;
+    --sidebar-primary: 0.58 0.22 162;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.94 0.01 260;
+    --sidebar-accent-foreground: 0.25 0.03 260;
+    --sidebar-border: 0.88 0.02 260;
+    --sidebar-ring: 0.58 0.22 162;
+
+    /* Level colors */
+    --level-iniciante: 0.65 0.22 142;
+    --level-moderado: 0.72 0.18 75;
+    --level-experiente: 0.58 0.25 295;
+  }
+
+  .dark {
+    --background: 0.1 0.02 260;
+    --foreground: 0.92 0.01 240;
+
+    --card: 0.14 0.025 260;
+    --card-foreground: 0.92 0.01 240;
+
+    --popover: 0.14 0.025 260;
+    --popover-foreground: 0.92 0.01 240;
+
+    --primary: 0.78 0.2 162;
+    --primary-foreground: 0.08 0.015 260;
+
+    --secondary: 0.18 0.025 260;
+    --secondary-foreground: 0.8 0.01 240;
+
+    --muted: 0.18 0.02 260;
+    --muted-foreground: 0.58 0.04 250;
+
+    --accent: 0.65 0.22 162;
+    --accent-foreground: 0.08 0.015 260;
+
+    --destructive: 0.65 0.2 20;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.22 0.03 260;
+    --input: 0.22 0.03 260;
+    --ring: 0.78 0.2 162;
+
+    --chart-1: 0.78 0.2 162;
+    --chart-2: 0.82 0.18 75;
+    --chart-3: 0.72 0.25 295;
+    --chart-4: 0.75 0.2 30;
+    --chart-5: 0.72 0.18 220;
+
+    --sidebar: 0.1 0.02 260;
+    --sidebar-foreground: 0.92 0.01 240;
+    --sidebar-primary: 0.78 0.2 162;
+    --sidebar-primary-foreground: 0.08 0.015 260;
+    --sidebar-accent: 0.18 0.025 260;
+    --sidebar-accent-foreground: 0.8 0.01 240;
+    --sidebar-border: 0.22 0.03 260;
+    --sidebar-ring: 0.78 0.2 162;
+
+    /* Level colors */
+    --level-iniciante: 0.72 0.24 142;
+    --level-moderado: 0.82 0.18 75;
+    --level-experiente: 0.72 0.25 295;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Outfit", sans-serif;
+  }
+  code,
+  pre,
+  .font-mono {
+    font-family: "JetBrains Mono", monospace;
+  }
+}
+
+/* Code block styles */
+.code-block {
+  background: oklch(0.08 0.015 260);
+  border: 1px solid oklch(0.22 0.03 260);
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  position: relative;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: oklch(0.88 0.04 140);
+}
+
+.dark .code-block {
+  background: oklch(0.07 0.015 260);
+  border-color: oklch(0.25 0.04 260);
+}
+
+.code-block .kw {
+  color: oklch(0.72 0.25 295);
+}
+.code-block .fn {
+  color: oklch(0.75 0.2 200);
+}
+.code-block .str {
+  color: oklch(0.72 0.18 75);
+}
+.code-block .num {
+  color: oklch(0.72 0.24 30);
+}
+.code-block .cm {
+  color: oklch(0.52 0.04 250);
+  font-style: italic;
+}
+.code-block .var {
+  color: oklch(0.88 0.05 240);
+}
+.code-block .op {
+  color: oklch(0.78 0.2 162);
+}
+
+/* Scanline hero effect */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    oklch(0 0 0 / 0.03) 2px,
+    oklch(0 0 0 / 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Level badge colors */
+.badge-iniciante {
+  background: oklch(var(--level-iniciante) / 0.15);
+  color: oklch(var(--level-iniciante));
+  border: 1px solid oklch(var(--level-iniciante) / 0.3);
+}
+
+.badge-moderado {
+  background: oklch(var(--level-moderado) / 0.15);
+  color: oklch(var(--level-moderado));
+  border: 1px solid oklch(var(--level-moderado) / 0.3);
+}
+
+.badge-experiente {
+  background: oklch(var(--level-experiente) / 0.15);
+  color: oklch(var(--level-experiente));
+  border: 1px solid oklch(var(--level-experiente) / 0.3);
+}
+
+/* Card glow on hover */
+.card-glow-iniciante:hover {
+  box-shadow: 0 0 24px -4px oklch(var(--level-iniciante) / 0.3);
+}
+.card-glow-moderado:hover {
+  box-shadow: 0 0 24px -4px oklch(var(--level-moderado) / 0.3);
+}
+.card-glow-experiente:hover {
+  box-shadow: 0 0 24px -4px oklch(var(--level-experiente) / 0.3);
+}
+
+/* Progress bar colors */
+.progress-iniciante [data-slot="progress-indicator"] {
+  background: oklch(var(--level-iniciante));
+}
+.progress-moderado [data-slot="progress-indicator"] {
+  background: oklch(var(--level-moderado));
+}
+.progress-experiente [data-slot="progress-indicator"] {
+  background: oklch(var(--level-experiente));
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(var(--border));
+  border-radius: 3px;
+}
